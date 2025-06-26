@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>My Budget App</title>
+</head>
+<body>
+  <h1>예산 관리</h1>
+  <button onclick="loadBudgets()">불러오기</button>
+
+  <script>
+    function loadBudgets() {
+      fetch('https://mybudjet-backend.onrender.com/api/budgets')
+        .then(res => res.json())
+        .then(data => console.log('예산:', data))
+        .catch(err => console.error('Fetch 실패:', err));
+    }
+  </script>
+</body>
+</html>
